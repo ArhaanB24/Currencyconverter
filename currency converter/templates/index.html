@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Convertrt</title>
+</head>
+<body>
+    <form action="" method="post">
+        <label for="first">Enter Currency to convert from
+            <datalist id="first" name="first">
+                {% for x in curr_lst %}
+                <option value="{{x}}">{{x}}</option>
+                {% endfor %}
+            </datalist>
+            <input autocomplete="on" list="first" name="first" id="first"> 
+        </label>
+        <br>
+        <br> 
+        <label for="first">Enter Currency to convert to
+            <datalist id="second" name="second">
+                {% for x in curr_lst %}
+                <option value="{{x}}">{{x}}</option>
+                {% endfor %}
+            </datalist>
+            <input autocomplete="on" list="second" id="second" name="second"> 
+        </label>
+        <br>
+        <br>
+        <label for="amount">Enter amount to be converted
+            <input type="text" name="amount" id="amount">
+        </label>
+        <button type="submit">Submit</button>
+    </form>
+    <br>
+    <br>
+    <h1>{{ ans }}</h1>
+</body>
+</html>
