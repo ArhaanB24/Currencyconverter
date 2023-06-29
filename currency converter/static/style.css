@@ -1,0 +1,55 @@
+body {
+    background-color: rgb(66, 57, 57);
+    background-repeat: no-repeat;
+    background-size: 100% 150%;
+    overflow: hidden;
+    color: white;
+}
+*:focus {
+    outline: none;
+}
+#heading {
+    text-align: center;
+    font-size: 6rem;
+    font-family: Agency FB; 
+}
+#form{
+    text-align: center;
+    font-size: 3rem;
+    font-family: Agency FB;
+}
+input{
+    width: 40rem;
+    height:2rem;
+    margin-bottom: 2rem;
+    background: transparent;
+    border: none;
+    border-bottom:2px solid white ;
+    font-size: 2rem;
+    color: white;
+}
+.inpt{
+    background: transparent;
+    border: none;
+    border-bottom:2px solid white ;
+    font-size: 2rem;
+    color: white;
+}
+button{
+    width:15rem;
+    background-color: orangered;
+    font-family: Agency FB;
+    font-size: 3rem;
+    color:white;
+    border-radius:50px;
+    margin-top: 1rem;
+}
+#ans{
+    text-align: center;
+    font-family: Agency FB;
+    font-size: 3.5rem;
+    margin-top: 3rem;
+}
+.flash{
+    font-size: 1rem;
+}

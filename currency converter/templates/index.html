@@ -1,65 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currency Converter</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
 </head>
-<style>
-    body{
-        background-image:url("/static/back2.jpg");
-        background-repeat: no-repeat;
-        background-size: 100% 150%;
-        
-    }
-    #heading {
-        text-align: center;
-        font-size: 6rem;
-        font-family: Agency FB;
-    }
-    #form{
-        text-align: center;
-        font-size: 3rem;
-        font-family: Agency FB;
-    }
-    input{
-        width: 40rem;
-        height:2rem;
-        margin-bottom: 2rem;
-        background: transparent;
-        border: none;
-        border-bottom:2px solid white ;
-        font-size: 2rem;
-        color: white;
-    }
-    .inpt{
-        background: transparent;
-        border: none;
-        border-bottom:2px solid white ;
-        font-size: 2rem;
-        color: white;
-    }
-    button{
-        width:20rem;
-        background-color: orangered;
-        font-family: Agency FB;
-        font-size: 4rem;
-        color:white;
-        border-radius:50px;
-        margin-top: 1rem;
-        box-shadow: 0 8px 16px 0 grey, 0 6px 20px 0 grey
-    }
-    #ans{
-        text-align: center;
-        font-family: Agency FB;
-        font-size: 4rem;
-        margin-top: 3rem;
-    }
-
-</style>
-
-<body style="background-color: white; color: white">
-    <p id="heading">Currency <span style="color:red">Converter</span></p>
+<body>
+    <center>
+    <span id="heading">Currency </span><span id="heading" style="color:red">Converter</span></center><br><br><br><br>
     <div id="form">
+        
+        
         <form action="" method="post">
             <label id="from" for="first">Enter <span style="color: orange">Currency</span> to convert from:<br>
                 <datalist id="first" name="first">
@@ -80,11 +32,23 @@
             </label>
             <br>
             <label id="convert" for="amount">Enter <span style="color: red">Amount</span> to convert to:<br>
-                <input type="text" name="amount" id="amount" class="inpt"><br>
+                <input type="text" name="amount" id="amount" class="inpt" autocomplete="off"><br>
             </label>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <span class="flash">
+                <center>
+                {% for message in messages %}
+                {{ message }}
+                </center>
+                {% endfor %}
+            </span>
+            {% endif %}
+            {% endwith %}
             <button id="submit" type="submit">Submit</button>
         </form>
     </div>
+    
     <p id="ans">Converted <span style="color:orange">Amount</span>: {{ ans }}</p>
 </body>
 
