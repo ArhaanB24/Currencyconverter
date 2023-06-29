@@ -2,89 +2,53 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currency Converter</title>
-    <style>
-        #heading {
-            width: 100%;
-            max-width: 750px;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-        }
-
-        #form {
-            max-width: 750px;
-            margin: 0 auto;
-            font-size: 20px;
-            margin-top: 20px;
-            font-family: "Agency FB", sans-serif;
-        }
-
-        #to {
-            margin-left: 0;
-        }
-
-        #convert {
-            margin-left: 0;
-        }
-
-        input {
-            width: 100%;
-            height: 40px;
-        }
-
-        #submit {
-            margin-top: 20px;
-            width: 100%;
-            height: 50px;
-            text-align: center;
-            font-family: "Agency FB", sans-serif;
-            font-size: 20px;
-            padding-top: 5px;
-            background-color: red;
-            color: white;
-            border-radius: 20px;
-        }
-
-        #ans {
-            font-size: 20px;
-            font-family: "Agency FB", sans-serif;
-            background-color: blue;
-            padding: 10px;
-            border-style: dashed;
-            border-radius: 10px;
-            max-width: 750px;
-            margin: 20px auto;
-        }
-
-        @media only screen and (min-width: 600px) {
-            #form {
-                font-size: 30px;
-            }
-
-            input {
-                height: 50px;
-            }
-
-            #submit {
-                height: 60px;
-                font-size: 30px;
-            }
-
-            #ans {
-                font-size: 30px;
-            }
-        }
-    </style>
 </head>
+<style>
+    body{
+        background-image:url("/static/back2.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 150%;
+    }
+    #heading {
+        text-align: center;
+        font-size: 7rem;
+        font-family: Agency FB;
+    }
+    #form{
+        text-align: center;
+        font-size: 4rem;
+        font-family: Agency FB;
+    }
+    input{
+        width: 40rem;
+        height:2rem;
+        margin-bottom: 2rem;
+    }
+    button{
+        width:20rem;
+        background-color: orangered;
+        font-family: Agency FB;
+        font-size: 4rem;
+        color:white;
+        border-radius:50px;
+        margin-top: 1rem;
+        box-shadow: 0 8px 16px 0 grey, 0 6px 20px 0 grey
+    }
+    #ans{
+        text-align: center;
+        font-family: Agency FB;
+        font-size: 4rem;
+        margin-top: 3rem;
+    }
 
-<body style="background-color: black; color: white">
-    <img id="heading" src="/static/h3.jpg">
+</style>
+
+<body style="background-color: white; color: white">
+    <p id="heading">Currency <span style="color:red">Converter</span></p>
     <div id="form">
         <form action="" method="post">
-            <label id="from" for="first">Enter <span style="color: aqua">Currency</span> to convert from:
+            <label id="from" for="first">Enter <span style="color: orange">Currency</span> to convert from:<br>
                 <datalist id="first" name="first">
                     {% for x in curr_lst %}
                     <option value="{{x}}">{{x}}</option>
@@ -93,8 +57,7 @@
                 <input autocomplete="on" list="first" name="first" id="first">
             </label>
             <br>
-            <br>
-            <label id="to" for="first">Enter <span style="color: orange">Currency</span> to convert to:
+            <label id="to" for="first">Enter <span style="color: orangered">Currency</span> to convert to:<br>
                 <datalist id="second" name="second">
                     {% for x in curr_lst %}
                     <option value="{{x}}">{{x}}</option>
@@ -103,14 +66,13 @@
                 <input autocomplete="on" list="second" id="second" name="second">
             </label>
             <br>
-            <br>
-            <label id="convert" for="amount">Enter <span style="color: palevioletred">amount</span> to convert to:
+            <label id="convert" for="amount">Enter <span style="color: red">Amount</span> to convert to:<br>
                 <input type="text" name="amount" id="amount"><br>
             </label>
             <button id="submit" type="submit">Submit</button>
         </form>
     </div>
-    <p id="ans">Converted Amount: {{ ans }}</p>
+    <p id="ans">Converted <span style="color:orange">Amount</span>: {{ ans }}</p>
 </body>
 
 </html>
