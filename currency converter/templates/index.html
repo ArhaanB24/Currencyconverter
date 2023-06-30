@@ -1,19 +1,24 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currency Converter</title>
     <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
 </head>
+<style>
+    #heading{
+        margin-top: 2rem;
+    }
+</style>
+
 <body>
     <center>
-    <span id="heading">Currency </span><span id="heading" style="color:red">Converter</span></center><br><br><br><br>
+        <p id="heading">€urrency <span id="heading" style="color:navy">€onverter</span></p>
+    </center>
     <div id="form">
-        
-        
         <form action="" method="post">
-            <label id="from" for="first">Enter <span style="color: orange">Currency</span> to convert from:<br>
+            <label id="from" for="first">Enter <span style="color: navy">Currency</span> to convert from:<br>
                 <datalist id="first" name="first">
                     {% for x in curr_lst %}
                     <option value="{{x}}">{{x}}</option>
@@ -22,7 +27,7 @@
                 <input autocomplete="on" list="first" name="first" id="first">
             </label>
             <br>
-            <label id="to" for="first">Enter <span style="color: orangered">Currency</span> to convert to:<br>
+            <label id="to" for="first">Enter <span style="color: navy">Currency</span> to convert to:<br>
                 <datalist id="second" name="second">
                     {% for x in curr_lst %}
                     <option value="{{x}}">{{x}}</option>
@@ -31,15 +36,15 @@
                 <input autocomplete="on" list="second" id="second" name="second">
             </label>
             <br>
-            <label id="convert" for="amount">Enter <span style="color: red">Amount</span> to convert to:<br>
+            <label id="convert" for="amount">Enter <span style="color: navy">Amount</span> to convert to:<br>
                 <input type="text" name="amount" id="amount" class="inpt" autocomplete="off"><br>
             </label>
             {% with messages = get_flashed_messages() %}
             {% if messages %}
-                <span class="flash">
+            <span class="flash">
                 <center>
-                {% for message in messages %}
-                {{ message }}
+                    {% for message in messages %}
+                    {{ message }}
                 </center>
                 {% endfor %}
             </span>
@@ -48,8 +53,8 @@
             <button id="submit" type="submit">Submit</button>
         </form>
     </div>
-    
-    <p id="ans">Converted <span style="color:orange">Amount</span>: {{ ans }}</p>
+
+    <p id="ans">Converted <span style="color:navy">Amount</span>: {{ ans }}</p>
 </body>
 
 </html>
