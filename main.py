@@ -30,6 +30,10 @@ def home():
             flash("Please enter valid value")
         except KeyError:
             flash("Country not available")
-    return render_template("index.html",curr_lst=curr_lst,ans = ans)
+    else:
+        amount = ""
+        first = ""
+        second = ""
+    return render_template("index.html",curr_lst=curr_lst,ans = ans,first=first,second=second,amount=amount)
 if __name__ == "__main__":
     app.run(debug=True)

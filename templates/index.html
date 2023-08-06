@@ -24,7 +24,7 @@
                     <option value="{{x}}">{{x}}</option>
                     {% endfor %}
                 </datalist>
-                <input autocomplete="on" list="first" name="first" id="first">
+                <input autocomplete="on" list="first" name="first" id="first" value="{{first}}">
             </label>
             <br>
             <label id="to" for="first">Enter <span style="color: navy">Currency</span> to convert to:<br>
@@ -33,11 +33,11 @@
                     <option value="{{x}}">{{x}}</option>
                     {% endfor %}
                 </datalist>
-                <input autocomplete="on" list="second" id="second" name="second">
+                <input autocomplete="on" list="second" id="second" name="second" value="{{second}}">
             </label>
             <br>
             <label id="convert" for="amount">Enter <span style="color: navy">Amount</span> to convert to:<br>
-                <input type="text" name="amount" id="amount" class="inpt" autocomplete="off"><br>
+                <input type="text" name="amount" id="amount" class="inpt" autocomplete="off" value="{{amount}}"><br>
             </label>
             {% with messages = get_flashed_messages() %}
             {% if messages %}
